@@ -308,7 +308,8 @@ func main() {
 
 	if exitCode, err := Serve(cConfig); err != nil {
 		if err != nil {
-			log.Errorf(err.Error())
+			log.Error(err)
+			fmt.Fprintln(os.Stderr, err)
 			if !bincoverTesting {
 				os.Exit(exitCode)
 			}
