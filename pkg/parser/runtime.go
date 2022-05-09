@@ -302,7 +302,7 @@ func Parse(ctx UnixParserCtx, xp types.Event, nodes []Node) (types.Event, error)
 			if ctx.Profiling {
 				node.Profiling = true
 			}
-			ret, err := node.process(&event, ctx, cachedExprEnv)
+			ret, err := node.process(&event, ctx, &cachedExprEnv)
 			if err != nil {
 				clog.Fatalf("Error while processing node : %v", err)
 			}
